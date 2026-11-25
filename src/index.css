@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Manrope', 'Vazirmatn', ui-sans-serif, system-ui, sans-serif;
+  --font-latin: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #0a1024;
+  --color-ink-2: #141c38;
+  --color-paper: #f4f5f9;
+  --color-line: #e3e6ef;
+  --color-muted: #6b7390;
+  --color-accent: #3355ff;
+  --color-accent-soft: #e8edff;
+  --color-mint: #10b981;
+  --color-mint-soft: #defaf0;
+  --color-coral: #ff5a4e;
+  --color-coral-soft: #ffe9e7;
+  --color-amber: #f2a516;
+  --color-amber-soft: #fff3d9;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    background: #05081a;
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: var(--len, 600);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.reveal {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.grow-x {
+  transform-origin: right center;
+  animation: grow-x 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.draw {
+  stroke-dasharray: var(--len, 600);
+  animation: draw 1.1s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.static-slide .reveal,
+.static-slide .grow-x,
+.static-slide .draw {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .grow-x,
+  .draw {
+    animation: none;
+  }
+}
