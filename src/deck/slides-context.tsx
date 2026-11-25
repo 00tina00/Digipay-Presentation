@@ -30,8 +30,9 @@ export function Cover() {
           <span className="font-latin text-[18px] font-extrabold">d</span>
         </div>
         <div dir="ltr" className="font-latin leading-tight">
-          <div className="text-[17px] font-bold">Digipay</div>
-          <div className="text-[12px] font-semibold tracking-[0.18em] text-white/50 uppercase">Product research</div>
+          <div className="text-[21px] font-bold">Digipay</div>
+          <div className="mt-1 text-[15px] font-semibold text-white/60">Product design discovery</div>
+          <div className="mt-1 text-[16px] font-medium text-white/80">Tina Khalaj</div>
         </div>
       </Reveal>
     </div>
